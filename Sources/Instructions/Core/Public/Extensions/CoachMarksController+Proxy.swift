@@ -58,13 +58,13 @@ extension CoachMarksController: CoachMarksControllerProxyDelegate {
     }
 
     func willShow(coachMark: inout CoachMark, afterSizeTransition: Bool, at index: Int) {
-        delegate?.coachMarksController(self, willShow: &coachMark,
-                                       afterSizeTransition: afterSizeTransition, at: index)
+        delegate?.coachMarksController(self, didShow: coachMark,
+                                       afterChanging: ConfigurationChange.size, at: index)
     }
 
     func didShow(coachMark: CoachMark, afterSizeTransition: Bool, at index: Int) {
         delegate?.coachMarksController(self, didShow: coachMark,
-                                       afterSizeTransition: afterSizeTransition, at: index)
+                                       afterChanging: ConfigurationChange.size, at: index)
     }
 
     func willShow(coachMark: inout CoachMark, beforeChanging change: ConfigurationChange,
